@@ -2,7 +2,7 @@
 function maxOfTwoNumbers(num1, num2){
   if(num1 > num2){
       return num1
-  }
+  }   
   else {
   return num2
   }
@@ -74,23 +74,25 @@ console.log("The average is: " + averageNumbers(numbersAvg));
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength(words){
+function averageWordLength(arr){
+  let arrSum = 0;
+
 
   // return null when Array is empty
-  if (words.length == 0) 
+  if (arr.length === 0) {
     return null;
+  }
 
-   // check the length of each word
-   for (let i = 0; i < words.length; i++) {
-     console.log(words[i]);
-    }
-  // add the length of each word together = sum
-  // devide sum by number of elements in the array
-
-  
-
+  // otherwise calculate the average 
+  for (let i = 0; i < arr.length; i++) {
+    arrSum = arr[i].length + arrSum;
+  }
+    return arrSum / arr.length;
 
 }
+console.log("The average is: " + averageWordLength(wordsArr));
+
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -106,6 +108,23 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+
+function uniquifyArray(arr){
+  let newArr = [];
+  // return null when Array is empty
+  if (arr.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+
+    if (newArr.includes(arr[i]) == false){
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+console.log(uniquifyArray(wordsUnique));
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
